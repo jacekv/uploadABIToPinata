@@ -1,0 +1,14 @@
+{
+  "name": "uploadabitopinata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacek Varky",
+  "license": "ISC",
+  "dependencies": {
+    "@pinata/sdk": "^1.1.13"
+  }
+}
