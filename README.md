@@ -38,4 +38,14 @@ Now you will be able to upload your Smart Contracts ABI using the following comm
 npx hardhat upload --name [some pinning name]
 ```
 
+## Which Smart Contracts ABIs to upload?
+
+In order to pick which ABIs you want to upload, create a `.uploadABI.json` file in your root folder of your hardhat project:
+```
+{
+    "files": [
+        "Greeter.sol" # this represents the artifacts/contracts/Greeter.sol/ directory structure
+    ]
+}
+```
 Enjoy and I hope it is usefull :)
