@@ -75,11 +75,12 @@ async function uploadABIToPinata(name) {
         exit(1);
     }
     // credentials are stored in PINATA_API_KEY and PINATA_API_SECRET
+    console.log("Loading Pinata client");
     pinata = loadPinata();
+    console.log(`Cheking if pin with name ${name} exists`);
     if (await checkIfPinExists(name)) {
         console.log(`A pin with ${name} exists. We are going to unpin it first`);
         await unpin(name);
-        exit(1);
     }
     const uploadContracts = JSON.parse(readFile(".uploadAbi.json"));
     let pinataBody = {
@@ -87,6 +88,7 @@ async function uploadABIToPinata(name) {
     }
     let file;
     let content;
+    //Currently only for .sol files. The directory has .sol in it
     uploadContracts.files.forEach((contract) => {
         if (contract.includes('/')) {
             file = `${HARDHAT_CONTRACT_PATH}${contract}/${contract.split('/')[1].split('.')[0]}.json`;
@@ -109,6 +111,7 @@ async function uploadABIToPinata(name) {
             cidVersion: 0
         }
     };
+    console.log("Upload and pin Smart Contract's abi in Pinata");
     return pinata.pinJSONToIPFS(pinataBody, options);
 }
 
