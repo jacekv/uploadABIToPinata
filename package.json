@@ -1,6 +1,6 @@
 {
-  "name": "upload-abi-to-pinata",
-  "version": "1.0.2",
+  "name": "pin-abi",
+  "version": "1.0.0",
   "description": "Package for Hardhat which uploads a Smart Contract's abi to IPFS and pins it using Pinata",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,8 @@
   "author": "Jacek Varky",
   "license": "ISC",
   "dependencies": {
-    "@pinata/sdk": "^1.1.13"
+    "@pinata/sdk": "^1.1.13",
+    "axios": "^0.21.1"
   },
   "homepage": "https://github.com/jacekv/uploadABIToPinata"
 }
