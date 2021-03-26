@@ -86,7 +86,7 @@ function writeFile(filePath, content) {
  * @param {*} name - Name to be given to the pinned object
  * @returns Object with ipds hash
  */
-function uploadABIToPinata(name) {
+async function uploadABIToPinata(name) {
     if (name === "" || name === undefined) {
         console.log("Parameter name is not set");
         exit(1);
@@ -154,7 +154,7 @@ function uploadABIToPinata(name) {
  * directory.
  * @param {*} name - Pinning name used during the upload of the ABIs 
  */
-function downloadABIFromPinata(name) {
+async function downloadABIFromPinata(name) {
     if (name === "" || name === undefined) {
         console.log("Parameter name is not set");
         exit(1);
